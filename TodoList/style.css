@@ -1,0 +1,115 @@
+body {
+    background-color: #cebbf6;
+}
+
+.add-todo-page {
+    font-family: "HONOR Sans", sans-serif;
+    max-width: 600px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.add-todo-page .add-todo-form > * {
+    vertical-align: top;
+    display: inline-block;
+}
+
+.add-todo-page .error-message {
+    color: #f00;
+    display: none;
+}
+
+.error-message-for-todo-input {
+    color: #f00;
+    width: 100%;
+    background-color: rgba(255, 192, 203, 0);
+    padding-right: 70px;
+}
+
+.todo-item-text, .edit-text-field {
+    width: 400px;
+    height: 30px;
+    display: inline-block;
+    font-size: 18px;
+    padding: 1px 13px;
+    text-align: left;
+    word-wrap: break-word;
+    border-radius: 18px;
+    background-color: #fffafaff;
+}
+
+.new-todo-text-field {
+    height: 30px;
+    width: 300px;
+    border-radius: 18px;
+    font-size: 18px;
+    padding-left: 13px;
+    background-color: #cebbf6;
+}
+
+.new-todo-text-field:hover, .edit-text-field:hover {
+    background-color: #d4c3f6;
+}
+
+.add-todo-page .add-button {
+    background-image: url("images/buttonAdd.png");
+}
+
+.add-todo-page .delete-button {
+    background-image: url("images/buttonDelete.png");
+    border-radius: 3px;
+}
+
+.add-todo-page .edit-button {
+    background-image: url("images/buttonEdit.png");
+    border-radius: 3px;
+}
+
+.cancel-button {
+    background-image: url("images/buttonCancel.png");
+}
+
+.save-button {
+    background-image: url("images/buttonSave.png");
+}
+
+.buttons-group {
+    max-height: 69px;
+}
+
+.add-todo-page button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-size: cover;
+    transition: box-shadow 0.3s;
+    border-radius: 50px;
+    margin-left: 10px;
+    background-color: #cebbf6;
+}
+
+.add-todo-page button:hover {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.add-todo-page .invalid + .error-message {
+    display: block;
+}
+
+.invalid {
+    border-color: #f00;
+}
+
+.add-todo-page .todo-item + .todo-item {
+    margin-top: 10px;
+}
+
+.todo-item {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}

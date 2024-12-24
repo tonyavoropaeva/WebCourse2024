@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #676565;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.title {
+    max-width: 744px;
+    font-size: 29px;
+    background-color: #fff;
+    font-weight: lighter;
+    margin-bottom: 4px;
+    padding-left: 22px;
+}
+
+.container-bg-color {
+    max-width: 744px;
+    background-color: #feeed6;
+    padding-top: 1em;
+    padding-bottom: 14px;
+}
+
+.help-block {
+    margin-top: -7px;
+    margin-bottom: 10px;
+    color: #737373;
+}
+
+.form-application {
+    line-height: 1.42857143;
+    font-size: 14px;
+    padding-right: 22px;
+    padding-left: 22px;
+    position: relative;
+}
+
+.bold, .button {
+    font-weight: 700;
+}
+
+.small-bottom-margin {
+    margin-bottom: 10px;
+}
+
+.form-input, .form-textarea {
+    border: none;
+    background-color: #fff;
+    padding: 6px 12px;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.form-input {
+    height: 34px;
+    width: 100%;
+}
+
+.form-textarea {
+    width: 100%;
+    height: 115px;
+    resize: vertical;
+    padding-top: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.button {
+    padding: 7px 10px;
+    color: #fff;
+    background-color: #378db2;
+    border: none;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.position-right {
+    text-align: right;
+}
+
+.button:hover {
+    background-color: #32728d;
+}

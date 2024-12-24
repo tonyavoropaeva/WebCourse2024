@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "HONOR Sans", sans-serif;
+}
+
+.form {
+    max-width: 480px;
+    padding: 11px 11px 3px;
+    vertical-align: top;
+    border: 10px groove #FFC0CB;
+}
+
+.border {
+    padding-left: 6px;
+    padding-top: 1px;
+    border: 1px solid #000;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inline-block, .border {
+    display: inline-block;
+    width: 100%;
+    height: 27px;
+}
+
+.button {
+    padding: 4px 10px;
+    color: #000;
+    background-color: #FFC0CB;
+    cursor: pointer;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.position-right {
+    text-align: right;
+}
+
+.input-celsius {
+    font-size: 1rem;
+    padding: 1px 5px;
+}

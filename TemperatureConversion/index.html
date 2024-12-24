@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Перевод температур</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+<form class="form" id="form">
+    <div class="form-group">
+        <label for="text-field" class="inline-block">Градус Цельсия °</label>
+        <input class="border input-celsius"
+               id="text-field"
+               placeholder="Введите число"
+               type="number" step="0.01">
+    </div>
+    <div class="form-group">
+        <label class="inline-block">Кельвин K </label>
+        <output class="border" id="kelvin-output"></output>
+    </div>
+    <div class="form-group">
+        <label class="inline-block">Градус Фаренгейта °F </label>
+        <output class="border" id="fahrenheit-output"></output>
+    </div>
+    <div class="position-right">
+        <button class="button" id="add-button">Вычислить</button>
+    </div>
+</form>
+</body>
+</html>
