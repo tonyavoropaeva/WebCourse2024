@@ -19,7 +19,7 @@
 
 .persons-table th {
     padding-top: 12px;
-    padding-bottom: 11px;
+    padding-bottom: 10px;
 }
 
 .persons-table td {
@@ -27,19 +27,23 @@
     padding-bottom: 12px;
 }
 
-.persons-table td, .persons-table th {
+.persons-table td,
+.persons-table th {
     border: 1px solid #d3d3d3;
     font-weight: normal;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.with\=20\% {
+.col-first-name,
+.col-last-name {
     width: 20%;
 }
 
-.with\=37\% {
+.col-job-title {
     width: 37%;
 }
 
-.with\=23\% {
+.col-twitter {
     width: 23%;
 }
