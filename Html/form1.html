@@ -1,55 +1,77 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Анкета на получение визы</title>
 </head>
+
 <body>
 <form>
     <label>
-        Ваше имя: <input type="text" placeholder="Ваше имя" name="clientName">
+        Ваше имя: <input type="text" placeholder="Ваше имя" name="client_name">
     </label>
     <br><br>
+
     <label>
-        Ваша фамилия: <input type="text" placeholder="Ваша фамилия" name="clientSurname">
+        Ваша фамилия: <input type="text" placeholder="Ваша фамилия" name="client_surname">
     </label>
     <br><br>
+
     <label>
-        Номер заграничного паспорта: <input type="number" placeholder="ххххххх" name="passportNumber">
+        Номер заграничного паспорта: <input type="number" placeholder="ххххххх" name="passport_number">
     </label>
     <br><br>
-    <label>Виза запрашивается для: </label><br>
-    <input type="radio" id="singleEntry" name="entry"><label for="singleEntry"> Однократного въезда</label>
+
+    <p>Виза запрашивается для: </p>
+    <label>
+        <input type="radio" name="entry"> Однократного въезда
+    </label>
     <br>
-    <input type="radio" id="twoEntries" name="entry"><label for="twoEntries"> Двукратного въезда</label>
+    <label>
+        <input type="radio" name="entry"> Двукратного въезда
+    </label>
     <br>
-    <input type="radio" id="multipleEntries" name="entry"><label for="multipleEntries"> Многократного въезда</label>
+    <label>
+        <input type="radio" name="entry"> Многократного въезда
+    </label>
     <br><br>
-    <label>Семейное положение: </label><br>
-    <input type="radio" id="married" name="familyStatus"><label for="married"> Замужем/Женат</label>
+
+    <p>Семейное положение: </p>
+    <label>
+        <input type="radio" name="family_status"> Замужем/Женат
+    </label>
     <br>
-    <input type="radio" id="divorced" name="familyStatus"><label for="divorced"> Разведен(а)</label>
+    <label>
+        <input type="radio" name="family_status"> Разведен(а)
+    </label>
     <br>
-    <input type="radio" id="single" name="familyStatus"><label for="single"> Не замужем/Не женат</label>
+    <label>
+        <input type="radio" name="family_status"> Не замужем/Не женат
+    </label>
     <br>
-    <input type="radio" id="widow" name="familyStatus"><label for="widow"> Вдовец/Вдова</label>
+    <label>
+        <input type="radio" name="family_status"> Вдовец/Вдова
+    </label>
     <br><br>
-    <label>Выберете город подачи заявления: </label><br>
+
+    <p>Выберете город подачи заявления: </p>
     <label>
         <select>
             <option value="novosibirsk">Новосибирск</option>
             <option value="moscow">Москва</option>
-            <option value="saintPetersburg">Санкт-Петербург</option>
+            <option value="saint_petersburg">Санкт-Петербург</option>
             <option value="ekaterinburg">Екатеринбург</option>
         </select>
     </label>
     <br><br>
-    <label>Цель поездки: </label><br>
+
+    <p>Цель поездки: </p>
     <label>
         <select>
             <option value="tourism">туризм</option>
             <option value="business">деловая</option>
-            <option value="visitingFamily">посещение родственников</option>
+            <option value="visiting_family">посещение родственников</option>
             <option value="culture">культура</option>
             <option value="medical">лечение</option>
             <option value="study">учеба</option>
@@ -58,25 +80,37 @@
         </select>
     </label>
     <br><br>
-    <label>Если цель поездки иная, укажите её ниже: </label> <br>
+
+    <p>Если цель поездки иная, укажите её ниже: </p>
     <label>
         <textarea placeholder="Напишите здесь" cols="30" rows="4"></textarea>
     </label><br>
     <br>
-    <label>Средства: </label><br>
-    <input type="checkbox" id="cash"><label for="cash"> Наличные деньги</label>
+
+    <p>Средства: </p>
+    <label>
+        <input type="checkbox"> Наличные деньги
+    </label>
     <br>
-    <input type="checkbox" id="travellersCheques"><label for="travellersCheques"> Дорожные чеки</label>
+    <label>
+        <input type="checkbox"> Дорожные чеки
+    </label>
     <br>
-    <input type="checkbox" id="creditCard"><label for="creditCard"> Кредитная карта</label>
+    <label>
+        <input type="checkbox"> Кредитная карта
+    </label>
     <br>
-    <input type="checkbox" id="prePaidAccommodation"><label for="prePaidAccommodation"> Место проживание
-    предоплачено</label>
+    <label>
+        <input type="checkbox"> Место проживания предоплачено
+    </label>
     <br>
-    <input type="checkbox" id="prePaidTransport"><label for="prePaidTransport"> Транспорт предоплачен</label>
+    <label>
+        <input type="checkbox"> Транспорт предоплачен
+    </label>
     <br>
     <br>
-    <label>Выберете страны в которых вы были из предложенных ниже: </label><br>
+
+    <p>Выберете страны в которых вы были из предложенных ниже: </p>
     <label>
         <select multiple>
             <option value="France">Франция</option>
@@ -89,13 +123,15 @@
         </select>
     </label>
     <br><br>
-    <label>Комментарий: </label> <br>
+
+    <p>Комментарий: </p>
     <label>
         <textarea placeholder="Напишите здесь" cols="30" rows="4"></textarea>
     </label><br>
     <br>
     <button>Отправить</button>
     <br><br>
+
     <a href="form2.html">Ссылка на форму 2</a>
 </form>
 </body>
