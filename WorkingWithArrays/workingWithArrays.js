@@ -1,3 +1,5 @@
+"use strict";
+
 (function () {
     //  Создайте массив чисел
     const numbersArray = [3, 20, 11, 7, 15, 8, 41, 2, 9, 30, 17, 1];
@@ -11,18 +13,18 @@
     console.log("Отсортированный массив: " + numbersArray);
 
     //  Получите подмассив из первых 5 элементов
-    function getFirstFiveElements(array) {
-        return array.slice(0, 5);
+    function getFirstElements(array, number) {
+        return array.slice(0, number);
     }
 
-    console.log("Первые пять элементов массива: " + getFirstFiveElements(numbersArray));
+    console.log("Первые пять элементов массива: " + getFirstElements(numbersArray, 5));
 
     //  Подмассив из последних 5 элементов
-    function getLastFiveElements(array) {
-        return array.slice(-5);
+    function getLastElements(array, number) {
+        return array.slice(-number);
     }
 
-    console.log("Последние пять элементов массива: " + getLastFiveElements(numbersArray));
+    console.log("Последние пять элементов массива: " + getLastElements(numbersArray, 5));
 
     //  Найдите сумму элементов массива, которые являются
     //  четными числами
