@@ -1,7 +1,9 @@
+"use strict";
+
 (function () {
-// Создайте массив объектов-стран (пусть будет несколько стран)
-// У страны есть название и список городов (пусть будет по несколько городов)
-// У города есть название и численность населения
+    // Создайте массив объектов-стран (пусть будет несколько стран)
+    // У страны есть название и список городов (пусть будет по несколько городов)
+    // У города есть название и численность населения
     const countries = [
         {
             name: "Spain",
@@ -77,44 +79,40 @@
         }
     ];
 
-// Найдите страну/страны с максимальным количеством городов
+    // Найдите страну/страны с максимальным количеством городов
     function getCountriesNamesWithMaxCitiesCount(countries) {
-        let maxCitiesCount = 0;
+        const maxCitiesCount = countries.reduce(
+            (accumulator, country) => (country.cities.length > accumulator ? country.cities.length : accumulator),
+            countries[0].cities.length
+        );
+
         let countryNameWithMaxCitiesCount = [];
 
         countries.forEach(country => {
-            if (country.cities.length > maxCitiesCount) {
-                maxCitiesCount = country.cities.length;
-                countryNameWithMaxCitiesCount = [];
-                countryNameWithMaxCitiesCount.push(country);
-                return;
-            }
-
             if (country.cities.length === maxCitiesCount) {
                 countryNameWithMaxCitiesCount.push(country);
             }
-        });
+        })
 
         return countryNameWithMaxCitiesCount;
     }
 
-    console.log(getCountriesNamesWithMaxCitiesCount(countries));
+    console.log("Страны с максимальным количеством городов: " + getCountriesNamesWithMaxCitiesCount(countries).map(country => country.name));
 
-// Получите объект с информацией по всем странам такого
-// вида: ключ – название страны, значение – суммарная
-// численность по стране
+    // Получите объект с информацией по всем странам такого
+    // вида: ключ – название страны, значение – суммарная
+    // численность по стране
     function getCountriesPopulations(countries) {
-        let countriesPopulations = {};
+        const countriesPopulations = {};
 
         countries.forEach(country => {
-            let totalPopulation = 0;
+            const initPopulation = 0;
 
-            country.cities.forEach((city) => {
-                totalPopulation += city.population;
-            });
-
-            countriesPopulations[country.name] = totalPopulation;
-        })
+            countriesPopulations[country.name] = country.cities.reduce(
+                (accumulator, city) => accumulator + city.population,
+                initPopulation
+            );
+        });
 
         return countriesPopulations;
     }
