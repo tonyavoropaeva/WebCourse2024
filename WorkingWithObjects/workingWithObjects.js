@@ -106,7 +106,7 @@
     function getCountriesPopulations(countries) {
         let countriesPopulations = {};
 
-        countries.forEach((country) => {
+        countries.forEach(country => {
             let totalPopulation = 0;
 
             country.cities.forEach((city) => {
