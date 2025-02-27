@@ -110,5 +110,4 @@
     }
 
     console.log(getCountriesPopulations(countries));
-
 })();
