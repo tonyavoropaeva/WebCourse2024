@@ -13,15 +13,15 @@
     console.log("Отсортированный массив: " + numbersArray);
 
     //  Получите подмассив из первых 5 элементов
-    function getFirstElements(array, number) {
-        return array.slice(0, number);
+    function getFirstElements(array, count) {
+        return array.slice(0, count);
     }
 
     console.log("Первые пять элементов массива: " + getFirstElements(numbersArray, 5));
 
     //  Подмассив из последних 5 элементов
-    function getLastElements(array, number) {
-        return array.slice(-number);
+    function getLastElements(array, count) {
+        return array.slice(-count);
     }
 
     console.log("Последние пять элементов массива: " + getLastElements(numbersArray, 5));
