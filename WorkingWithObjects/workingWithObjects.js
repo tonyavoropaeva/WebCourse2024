@@ -80,24 +80,18 @@
     ];
 
     // Найдите страну/страны с максимальным количеством городов
-    function getCountriesNamesWithMaxCitiesCount(countries) {
-        const maxCitiesCount = countries.reduce(
-            (accumulator, country) => (country.cities.length > accumulator ? country.cities.length : accumulator),
-            countries[0].cities.length
+    function getMaxCitiesCountCountries(countries) {
+        const maxCitiesCount = countries.reduce((currentMaxCountry, currentCountry) => {
+                return Math.max(currentMaxCountry, currentCountry.cities.length);
+            }, 0
         );
 
-        let countryNameWithMaxCitiesCount = [];
-
-        countries.forEach(country => {
-            if (country.cities.length === maxCitiesCount) {
-                countryNameWithMaxCitiesCount.push(country);
-            }
-        })
-
-        return countryNameWithMaxCitiesCount;
+        return countries.filter(country =>
+            country.cities.length === maxCitiesCount
+        );
     }
 
-    console.log("Страны с максимальным количеством городов: " + getCountriesNamesWithMaxCitiesCount(countries).map(country => country.name));
+    console.log("Страны с максимальным количеством городов: " + getMaxCitiesCountCountries(countries).map(country => country.name));
 
     // Получите объект с информацией по всем странам такого
     // вида: ключ – название страны, значение – суммарная
@@ -106,16 +100,15 @@
         const countriesPopulations = {};
 
         countries.forEach(country => {
-            const initPopulation = 0;
-
             countriesPopulations[country.name] = country.cities.reduce(
-                (accumulator, city) => accumulator + city.population,
-                initPopulation
+                (populationSum, city) => populationSum + city.population,
+                0
             );
         });
 
         return countriesPopulations;
     }
 
-    getCountriesPopulations(countries);
+    console.log(getCountriesPopulations(countries));
+
 })();
