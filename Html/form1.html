@@ -1,62 +1,58 @@
 <!DOCTYPE html>
-
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Анкета на получение визы</title>
 </head>
-
 <body>
 <form>
     <label>
         Ваше имя: <input type="text" placeholder="Ваше имя" name="client_name">
     </label>
-    <br><br>
+    <br>
+    <br>
 
     <label>
         Ваша фамилия: <input type="text" placeholder="Ваша фамилия" name="client_surname">
     </label>
-    <br><br>
+    <br>
+    <br>
 
     <label>
         Номер заграничного паспорта: <input type="number" placeholder="ххххххх" name="passport_number">
     </label>
-    <br><br>
+    <br>
+    <br>
 
-    <p>Виза запрашивается для: </p>
     <label>
+        Виза запрашивается для:
+        <br>
         <input type="radio" name="entry"> Однократного въезда
-    </label>
-    <br>
-    <label>
+        <br>
         <input type="radio" name="entry"> Двукратного въезда
-    </label>
-    <br>
-    <label>
+        <br>
         <input type="radio" name="entry"> Многократного въезда
     </label>
-    <br><br>
+    <br>
+    <br>
 
-    <p>Семейное положение: </p>
     <label>
+        Семейное положение:
+        <br>
         <input type="radio" name="family_status"> Замужем/Женат
-    </label>
-    <br>
-    <label>
+        <br>
         <input type="radio" name="family_status"> Разведен(а)
-    </label>
-    <br>
-    <label>
+        <br>
         <input type="radio" name="family_status"> Не замужем/Не женат
-    </label>
-    <br>
-    <label>
+        <br>
         <input type="radio" name="family_status"> Вдовец/Вдова
     </label>
-    <br><br>
+    <br>
+    <br>
 
-    <p>Выберете город подачи заявления: </p>
     <label>
+        Выберете город подачи заявления:
+        <br>
         <select>
             <option value="novosibirsk">Новосибирск</option>
             <option value="moscow">Москва</option>
@@ -64,10 +60,12 @@
             <option value="ekaterinburg">Екатеринбург</option>
         </select>
     </label>
-    <br><br>
+    <br>
+    <br>
 
-    <p>Цель поездки: </p>
     <label>
+        Цель поездки:
+        <br>
         <select>
             <option value="tourism">туризм</option>
             <option value="business">деловая</option>
@@ -79,39 +77,36 @@
             <option value="other">иная</option>
         </select>
     </label>
-    <br><br>
+    <br>
+    <br>
 
-    <p>Если цель поездки иная, укажите её ниже: </p>
     <label>
+        Если цель поездки иная, укажите её ниже:
+        <br>
         <textarea placeholder="Напишите здесь" cols="30" rows="4"></textarea>
-    </label><br>
+    </label>
+    <br>
     <br>
 
-    <p>Средства: </p>
     <label>
+        Средства:
+        <br>
         <input type="checkbox"> Наличные деньги
-    </label>
-    <br>
-    <label>
+        <br>
         <input type="checkbox"> Дорожные чеки
-    </label>
-    <br>
-    <label>
+        <br>
         <input type="checkbox"> Кредитная карта
-    </label>
-    <br>
-    <label>
+        <br>
         <input type="checkbox"> Место проживания предоплачено
-    </label>
-    <br>
-    <label>
+        <br>
         <input type="checkbox"> Транспорт предоплачен
     </label>
     <br>
     <br>
 
-    <p>Выберете страны в которых вы были из предложенных ниже: </p>
     <label>
+        Выберете страны в которых вы были из предложенных ниже:
+        <br>
         <select multiple>
             <option value="France">Франция</option>
             <option value="Spain">Испания</option>
@@ -122,15 +117,19 @@
             <option value="Poland">Польша</option>
         </select>
     </label>
-    <br><br>
+    <br>
+    <br>
 
-    <p>Комментарий: </p>
     <label>
+        Комментарий:
+        <br>
         <textarea placeholder="Напишите здесь" cols="30" rows="4"></textarea>
-    </label><br>
+    </label>
+    <br>
     <br>
     <button>Отправить</button>
-    <br><br>
+    <br>
+    <br>
 
     <a href="form2.html">Ссылка на форму 2</a>
 </form>
