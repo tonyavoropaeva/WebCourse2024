@@ -13,9 +13,9 @@ body {
     border: 10px groove #FFC0CB;
 }
 
-.border {
+.form-field {
     padding-left: 6px;
-    padding-top: 1px;
+    padding-top: 3px;
     border: 1px solid #000;
 }
 
@@ -26,7 +26,7 @@ body {
     justify-content: center;
 }
 
-.inline-block, .border {
+.form-label, .form-field {
     display: inline-block;
     width: 100%;
     height: 27px;
