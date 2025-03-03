@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>TODO List</title>
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
@@ -11,18 +12,15 @@
     <h1>Список задач</h1>
 
     <form class="add-todo-form" id="add-todo-form">
-        <div>
-            <label for="new-todo-text-field"></label>
-            <input id="new-todo-text-field" class="new-todo-text-field" type="text" placeholder="Задача">
-            <div class="error-message">Необходимо указать текст</div>
-        </div>
-        <button class="add-button" id="add-button"></button>
+
+        <input id="new-todo-text-field" class="new-todo-text-field" type="text" placeholder="Задача">
+
+        <button title="Добавить" class="add-button" id="add-button"></button>
+        <div class="error-message">Необходимо указать текст</div>
     </form>
 
     <form class="edit-todo-form" id="edit-todo-form">
-        <div>
-            <ul class="todo-list" id="todo-list"></ul>
-        </div>
+        <ul class="todo-list" id="todo-list"></ul>
     </form>
 </div>
 </body>
