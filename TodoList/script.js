@@ -4,18 +4,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const addTodoForm = document.getElementById("add-todo-form");
     const todoList = document.getElementById("todo-list");
     const newTodoTextField = document.getElementById("new-todo-text-field");
-    const addButton = document.getElementById("add-button");
 
     addTodoForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        let newTodoText = newTodoTextField.value.trim();
-        addButton.classList.remove("invalid");
-
-        if (newTodoText.length === 0) {
-            addButton.classList.add("invalid");
+        if (isInputValid(newTodoTextField)) {
             return;
         }
+
+        let newTodoText = newTodoTextField.value.trim();
 
         const newTodo = document.createElement("li");
         newTodo.classList.add("todo-item");
@@ -36,11 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             newTodo.querySelector(".edit-button").addEventListener("click", function () {
                 newTodo.innerHTML =
-                    '<input type="text" class="edit-text-field">' +
+                    '<input type="text" id="edit-text-field" class="edit-text-field">' +
                     '<div class="buttons-group">' +
                     '<button title="Отменить" class="cancel-button" type="button"></button>' +
                     '<button title="Сохранить изменения" class="save-button" type="button"></button>' +
-                    '</div>';
+                    '</div>' +
+                    '<div class="error-message-for-todo-input">Необходимо указать текст</div>';
 
                 const editTextField = newTodo.querySelector(".edit-text-field");
 
@@ -61,21 +59,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
 
                 newTodo.querySelector(".save-button").addEventListener("click", function () {
-                    const changedTodoText = editTextField.value.trim();
-
-                    if (changedTodoText.length === 0) {
-                        const errorMessage = document.createElement("div");
-                        errorMessage.textContent = "Необходимо указать текст";
-                        errorMessage.className = "error-message-for-todo-input";
-
-                        if (newTodo.childNodes.length === 2) {
-                            newTodo.appendChild(errorMessage);
-                        }
-
+                    if (!isInputValid(editTextField)) {
                         return;
                     }
 
-                    newTodoText = changedTodoText;
+                    newTodoText = editTextField.value.trim();
                     setViewMode();
                 });
             });
@@ -87,4 +75,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         newTodoTextField.value = "";
     });
+
+    function isInputValid(input) {
+        input.classList.remove("invalid");
+
+        if (input.value.trim().length === 0) {
+            input.classList.add("invalid");
+
+            return false;
+        }
+
+        return true;
+    }
 });

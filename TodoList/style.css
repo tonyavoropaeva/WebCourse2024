@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #cebbf6;
 }
@@ -16,21 +20,24 @@ body {
     display: inline-block;
 }
 
-.add-todo-page .error-message {
+.add-todo-page .error-message, .add-todo-page .error-message-for-todo-input {
     color: #f00;
     display: none;
     padding-top: 5px;
-}
-
-.error-message-for-todo-input {
-    color: #f00;
     width: 100%;
-    background-color: rgba(255, 192, 203, 0);
-    padding-top: 5px;
+    font-size: 14px;
 }
 
-.todo-item-text, .edit-text-field, .new-todo-text-field  {
-    width: 70%;
+.invalid ~ .error-message, .invalid ~ .error-message-for-todo-input {
+    display: block;
+}
+
+.invalid {
+    border-color: #f00;
+}
+
+.todo-item-text, .edit-text-field, .new-todo-text-field {
+    width: 500px;
     display: inline-block;
     font-size: 18px;
     padding: 6px 13px;
@@ -38,6 +45,9 @@ body {
     word-wrap: break-word;
     border-radius: 18px;
     background-color: #fffafa;
+    box-sizing: border-box;
+    flex: 1;
+    margin-right: 10px;
 }
 
 .new-todo-text-field {
@@ -89,22 +99,11 @@ body {
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 }
 
-.add-todo-page .invalid + .error-message {
-    display: block;
-}
-
-.invalid {
-    border-color: #f00;
-}
-
-.add-todo-page .todo-item + .todo-item {
-    margin-top: 10px;
-}
-
 .todo-item, .add-todo-form {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
