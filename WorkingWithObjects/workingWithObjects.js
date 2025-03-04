@@ -81,14 +81,11 @@
 
     // Найдите страну/страны с максимальным количеством городов
     function getMaxCitiesCountCountries(countries) {
-        const maxCitiesCount = countries.reduce((currentMaxCountry, currentCountry) => {
-                return Math.max(currentMaxCountry, currentCountry.cities.length);
-            }, 0
-        );
+        const maxCitiesCount = countries.reduce((maxCitiesCount, country) => {
+            Math.max(maxCitiesCount, country.cities.length);
+        }, 0);
 
-        return countries.filter(country =>
-            country.cities.length === maxCitiesCount
-        );
+        return countries.filter(country => country.cities.length === maxCitiesCount);
     }
 
     console.log("Страны с максимальным количеством городов: " + getMaxCitiesCountCountries(countries).map(country => country.name));
@@ -101,7 +98,7 @@
 
         countries.forEach(country => {
             countriesPopulations[country.name] = country.cities.reduce(
-                (populationSum, city) => populationSum + city.population,
+                (populationsSum, city) => populationsSum + city.population,
                 0
             );
         });
