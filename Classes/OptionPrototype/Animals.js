@@ -7,7 +7,7 @@
 
     Animal.prototype.speak = function () {
         console.log(this.name + " издает звук");
-    }
+    };
 
     new Animal("Бедирхан").speak();
 
@@ -19,7 +19,7 @@
 
     Cat.prototype.speak = function () {
         console.log(this.name + " мяукает");
-    }
+    };
 
     new Cat("Мурочка").speak();
 
@@ -31,7 +31,7 @@
 
     Dog.prototype.speak = function () {
         console.log(this.name + " гавкает");
-    }
+    };
 
     new Dog("Кузенька").speak();
 })();
