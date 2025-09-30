@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     addTodoForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        if (isInputValid(newTodoTextField)) {
+        if (!isInputValid(newTodoTextField)) {
             return;
         }
 
