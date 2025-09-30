@@ -81,9 +81,10 @@
 
     // Найдите страну/страны с максимальным количеством городов
     function getMaxCitiesCountCountries(countries) {
-        const maxCitiesCount = countries.reduce((maxCitiesCount, country) => {
-            Math.max(maxCitiesCount, country.cities.length);
-        }, 0);
+        const maxCitiesCount = countries.reduce(
+            (maxCitiesCount, country) => Math.max(maxCitiesCount, country.cities.length),
+            0
+        );
 
         return countries.filter(country => country.cities.length === maxCitiesCount);
     }
