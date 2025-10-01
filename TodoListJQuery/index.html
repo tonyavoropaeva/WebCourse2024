@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO List jQuery</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="jquery-3.7.1.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+<div class="add-todo-page">
+    <h1>Список задач</h1>
+    <form class="add-todo-form" id="add-todo-form">
+        <input id="new-todo-text-field" class="new-todo-text-field" type="text" aria-label="input new todo"
+               placeholder="Задача">
+        <button title="Добавить" class="add-button" id="add-button"></button>
+        <div class="error-message">Необходимо указать текст</div>
+    </form>
+    <div class="todo-list" id="todo-list"></div>
+</div>
+</body>
+</html>

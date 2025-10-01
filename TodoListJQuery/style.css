@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #cebbf6;
+}
+
+.add-todo-page {
+    font-family: "HONOR Sans", sans-serif;
+    max-width: 600px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.add-todo-page .add-todo-form > * {
+    vertical-align: top;
+    display: inline-block;
+}
+
+.add-todo-page .error-message, .add-todo-page .error-message-for-todo-input {
+    color: #f00;
+    display: none;
+    padding-top: 5px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.invalid ~ .error-message, .invalid ~ .error-message-for-todo-input {
+    display: block;
+}
+
+.invalid {
+    border-color: #f00;
+}
+
+.todo-item-text, .edit-text-field, .new-todo-text-field {
+    width: 500px;
+    display: inline-block;
+    font-size: 18px;
+    padding: 6px 13px;
+    text-align: left;
+    word-wrap: break-word;
+    border-radius: 18px;
+    background-color: #fffafa;
+    box-sizing: border-box;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.new-todo-text-field {
+    background-color: #cebbf6;
+}
+
+.new-todo-text-field:hover, .edit-text-field:hover {
+    background-color: #d4c3f6;
+}
+
+.add-button {
+    background-image: url("images/buttonAdd.png");
+}
+
+.delete-button {
+    background-image: url("images/buttonDelete.png");
+}
+
+.add-todo-page .edit-button {
+    background-image: url("images/buttonEdit.png");
+    border-radius: 3px;
+}
+
+.cancel-button {
+    background-image: url("images/buttonCancel.png");
+}
+
+.add-todo-page .save-button {
+    background-image: url("images/buttonSave.png");
+    border-radius: 3px;
+}
+
+.buttons-group {
+    max-height: 69px;
+}
+
+.add-todo-page button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-size: cover;
+    transition: box-shadow 0.3s;
+    border-radius: 50px;
+    margin-left: 10px;
+    background-color: #cebbf6;
+}
+
+.add-todo-page button:hover {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.todo-item, .add-todo-form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
