@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d4c3f6;
+}
+
+.container {
+    font-family: "HONOR Sans", sans-serif;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.title {
+    font-size: 28px;
+    margin: 0 0 20px 0;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    flex: 1;
+    margin: 70px 0;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 300px;
+    border: 2px solid #230b3a;
+}
+
+.input-contact {
+    padding: 8px 10px;
+    border: 1px solid #230b3a;
+    border-radius: 8px;
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 15px;
+    flex-direction: column;
+}
+
+
+.error-message {
+    color: rgba(150, 17, 77, 0.71);
+    display: none;
+    margin-top: 2px;
+    font-size: 13px;
+}
+
+.invalid {
+    border-color: #230b3a;
+}
+
+.invalid + .error-message {
+    display: block;
+}
+
+.contact-table-form {
+    flex: 2;
+    max-width: 700px;
+    min-width: 450px;
+    margin: 20px;
+}
+
+.contacts-book-table {
+    table-layout: fixed;
+    width: 100%;
+    border: none;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.contacts-book-table thead th {
+    font-weight: bold;
+    text-align: left;
+    border: none;
+    padding: 5px 10px;
+    background: #a069c4;
+    font-size: 18px;
+}
+
+.contacts-book-table tbody td {
+    border: none;
+    padding-left: 10px;
+    font-size: 17px;
+}
+
+.contacts-book-table thead tr th:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.contacts-book-table thead tr th:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+.contacts-book-table tbody tr:nth-child(even){
+    background: #f3f3f3;
+}
+
+.contacts-book-table tbody tr td:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.contacts-book-table tbody tr td:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+.add-button {
+    align-self: flex-start;
+    padding: 3px 10px;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor:pointer;
+    background: rgba(137, 59, 190, 0.35);
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.add-button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.contacts-book-table button {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: box-shadow 0.3s;
+    margin-left: 10px;
+    background-color: rgba(200, 53, 206, 0.27);
+    cursor:pointer;
+}
+
+.contacts-book-table input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #a069c4;
+    border-radius: 5px;
+    padding: 5px 0;
+}
+
+.contacts-book-table button:hover {
+    transform: scale(1.1);
+}
+
+.edit-button {
+    background-image: url("images/edit.png");
+}
+
+.delete-button {
+    background-image: url("images/delete.png");
+}
+
+.save-button {
+    background-image: url("images/save.png");
+}
+
+.cancel-button {
+    background-image: url("images/cancel.png");
+}

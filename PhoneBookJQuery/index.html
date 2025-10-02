@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Телефонная книга</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+<div class="container">
+    <form class="contact-form" id="contact-form">
+        <h1 class="title">Новый контакт</h1>
+        <div class="form-group">
+            <input id="input-name" class="input-contact" type="text" placeholder="Имя"
+                   pattern="[A-Za-zА-Яа-яЁё\s]+" title="Имя должно содержать от 2 до 15 букв" minlength="2"
+                   maxlength="15">
+            <div class="error-message">Необходимо указать имя</div>
+        </div>
+        <div class="form-group">
+            <input id="input-surname" class="input-contact" type="text" placeholder="Фамилия"
+                   pattern="[A-Za-zА-Яа-яЁё\s]+" title="Фамилия должна содержать от 1 до 20 букв" maxlength="20">
+            <div class="error-message">Необходимо указать фамилию</div>
+        </div>
+        <div class="form-group">
+            <input id="input-number" class="input-contact" type="tel" placeholder="Номер телефона"
+                   pattern="^\+?\d{10,15}$" title="Введите номер телефона в формате (код страны) XXX XXX XX XX">
+            <div class="error-message">Необходимо указать номер телефона</div>
+        </div>
+        <button id="add-button" class="add-button">Добавить</button>
+    </form>
+
+    <div class="contact-table-form">
+        <h1 class="title">Список контактов</h1>
+        <table class="contacts-book-table">
+            <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Номер телефона</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody id="body-table">
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
