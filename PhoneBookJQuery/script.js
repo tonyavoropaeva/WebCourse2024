@@ -1,72 +1,74 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", function () {
-    const contactForm = document.getElementById("contact-form");
-    const inputName = document.getElementById("input-name");
-    const inputSurname = document.getElementById("input-surname");
-    const inputNumber = document.getElementById("input-number");
+$(function () {
+    const contactForm = $("#contact-form");
+    const inputName = $("#input-name");
+    const inputSurname = $("#input-surname");
+    const inputNumber = $("#input-number");
 
-    contactForm.addEventListener("submit", function (e) {
+    contactForm.submit(function (e) {
         e.preventDefault();
 
-        let name = inputName.value.trim();
-        let surname = inputSurname.value.trim();
-        let number = inputNumber.value.trim();
+        let name = inputName.val().trim();
+        let surname = inputSurname.val().trim();
+        let number = inputNumber.val().trim();
 
         if (!isValid(contactForm)) {
             return;
         }
 
-        const tableRow = document.createElement("tr");
+        const tableRow = $("<tr>");
 
-        const columnName = document.createElement("td");
-        const columnSurname = document.createElement("td");
-        const columnNumber = document.createElement("td");
-        const columnEdit = document.createElement("td");
+        const columnCounter = $("<td>").addClass("row-number");
+        tableRow.append(columnCounter);
 
-        tableRow.appendChild(columnName);
-        tableRow.appendChild(columnSurname);
-        tableRow.appendChild(columnNumber);
-        tableRow.appendChild(columnEdit);
+        const columnName = $("<td>");
+        const columnSurname = $("<td>");
+        const columnNumber = $("<td>");
+        const columnEdit = $("<td>");
 
-        const contactTable = document.getElementById("body-table");
+        tableRow.append(columnName, columnSurname, columnNumber, columnEdit);
+
+        const contactTable = $("#body-table");
         contactTable.append(tableRow);
 
-        function setViewMode() {
-            columnName.innerHTML = name;
-            columnSurname.innerHTML = surname;
-            columnNumber.innerHTML = number;
-            columnEdit.innerHTML = '<button class="delete-button" type="button"></button>' +
-                '<button class="edit-button" type="button"></button>';
+        updateCountContacts();
 
-            tableRow.querySelector(".delete-button").addEventListener("click", function () {
+        function setViewMode() {
+            columnName.html(name);
+            columnSurname.html(surname);
+            columnNumber.html(number);
+            columnEdit.html(`<button class="delete-button" type="button"></button>
+                <button class="edit-button" type="button"></button>`);
+
+            tableRow.find(".delete-button").click(function () {
                 tableRow.remove();
+                updateCountContacts();
             });
 
-            columnEdit.querySelector(".edit-button").addEventListener("click", function () {
-                columnName.innerHTML = '<input type="text" class="edit-name" id="edit-name" minlength="2" maxlength="15" pattern="[A-Za-zА-Яа-яЁё\\s]+">';
-                columnSurname.innerHTML = '<input type="text" class="edit-surname" maxlength="20" pattern="[A-Za-zА-Яа-яЁё\\s]+">';
-                columnNumber.innerHTML = '<input type="tel" class="edit-number" pattern="^\\+?\\d{10,15}$">';
-                columnEdit.innerHTML = '<button class="cancel-button" type="button"></button>' +
-                    '<button class="save-button" type="button"></button>';
+            columnEdit.find(".edit-button").click(function () {
+                columnName.html(`<input type="text" class="edit-name" id="edit-name" minlength="2" maxlength="15" pattern="[A-Za-zА-Яа-яЁё\\\\s]+">`);
+                columnSurname.html(`<input type="text" class="edit-surname" id="edit-surname" maxlength="20" pattern="[A-Za-zА-Яа-яЁё\\s]+">`);
+                columnNumber.html(`<input type="tel" class="edit-number" id="edit-number" pattern="^\\+?\\d{10,15}$">`);
+                columnEdit.html(`<button class="cancel-button" type="button"></button><button class="save-button" type="button"></button>`);
 
-                const editName = columnName.querySelector(".edit-name");
-                editName.value = name;
+                const editName = columnName.find("#edit-name");
+                editName.val(name);
 
-                const editSurname = columnSurname.querySelector(".edit-surname");
-                editSurname.value = surname;
+                const editSurname = columnSurname.find("#edit-surname");
+                editSurname.val(surname);
 
-                const editNumber = columnNumber.querySelector(".edit-number");
-                editNumber.value = number;
+                const editNumber = columnNumber.find("#edit-number");
+                editNumber.val(number);
 
-                columnEdit.querySelector(".cancel-button").addEventListener("click", function () {
+                columnEdit.find(".cancel-button").click(function () {
                     setViewMode();
                 });
 
-                columnEdit.querySelector(".save-button").addEventListener("click", function () {
-                    const changedName = editName.value.trim();
-                    const changedSurname = editSurname.value.trim();
-                    const changedNumber = editNumber.value.trim();
+                columnEdit.find(".save-button").click(function () {
+                    const changedName = editName.val().trim();
+                    const changedSurname = editSurname.val().trim();
+                    const changedNumber = editNumber.val().trim();
 
                     if (!isValid(tableRow)) {
                         return;
@@ -83,27 +85,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
         setViewMode();
 
-        inputName.value = "";
-        inputSurname.value = "";
-        inputNumber.value = "";
+        inputName.val("");
+        inputSurname.val("");
+        inputNumber.val("");
     });
 });
 
 function isValid(form) {
-    const allInputs = form.querySelectorAll("input");
+    const inputs = form.find("input");
     let result = true;
 
-    for (const input of allInputs) {
-        input.classList.remove("invalid");
+    inputs.each(function () {
+        const input = $(this);
+        input.removeClass("invalid");
 
-        if (input.value.trim() === "") {
-            input.classList.add("invalid");
+        if (input.val().trim() === "") {
+            input.addClass("invalid");
             result = false;
         }
-    }
+    });
 
     return result;
 }
 
-// Порядковые номера
-// CSS формы
+function updateCountContacts() {
+    $("#body-table tr").each(function (index) {
+        $(this).find(".row-number").text(index + 1);
+    })
+}

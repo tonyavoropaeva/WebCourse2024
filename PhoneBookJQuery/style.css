@@ -45,7 +45,6 @@ body {
     flex-direction: column;
 }
 
-
 .error-message {
     color: rgba(150, 17, 77, 0.71);
     display: none;
@@ -69,7 +68,7 @@ body {
 }
 
 .contacts-book-table {
-    table-layout: fixed;
+    table-layout: auto;
     width: 100%;
     border: none;
     overflow-wrap: break-word;
@@ -99,7 +98,7 @@ body {
     border-radius: 0 8px 8px 0;
 }
 
-.contacts-book-table tbody tr:nth-child(even){
+.contacts-book-table tbody tr:nth-child(even) {
     background: #f3f3f3;
 }
 
@@ -116,7 +115,7 @@ body {
     padding: 3px 10px;
     border-radius: 8px;
     margin-top: 20px;
-    cursor:pointer;
+    cursor: pointer;
     background: rgba(137, 59, 190, 0.35);
     transition: box-shadow 0.3s, transform 0.2s;
 }
@@ -136,7 +135,7 @@ body {
     transition: box-shadow 0.3s;
     margin-left: 10px;
     background-color: rgba(200, 53, 206, 0.27);
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .contacts-book-table input {
