@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     addTodoForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        if (!isInputValid(newTodoTextField)) {
+        if (!validateInput(newTodoTextField)) {
             return;
         }
 
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
 
                 newTodo.querySelector(".save-button").addEventListener("click", function () {
-                    if (!isInputValid(editTextField)) {
+                    if (!validateInput(editTextField)) {
                         return;
                     }
 
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
         newTodoTextField.value = "";
     });
 
-    function isInputValid(input) {
+    function validateInput(input) {
         input.classList.remove("invalid");
 
         if (input.value.trim().length === 0) {
