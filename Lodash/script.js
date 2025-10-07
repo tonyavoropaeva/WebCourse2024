@@ -88,10 +88,7 @@ import _ from "lodash";
     console.log(getUniqueNamesFromTwentyToThirtyAgeInDescending(persons));
 
     function getCountNames(persons) {
-        return _
-            .chain(persons)
-            .countBy("name")
-            .value()
+        return _.countBy(persons, "name");
     }
 
     console.log(getCountNames(persons));
