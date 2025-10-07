@@ -8,7 +8,7 @@ $(function () {
     addTodoForm.submit(function (e) {
         e.preventDefault();
 
-        if (!isInputValid(newTodoTextField)) {
+        if (!validateInput(newTodoTextField)) {
             return;
         }
 
@@ -17,13 +17,13 @@ $(function () {
         const newTodo = $("<li>").addClass("todo-item");
 
         function setViewMode() {
-            newTodo.html(
-                '<output class="todo-item-text"></output>' +
-                '<div class="buttons-group">' +
-                '<button title="Удалить" class="delete-button" type="button"></button>' +
-                '<button title="Изменить" class="edit-button" type="button"></button>' +
-                '</div>'
-            );
+            newTodo.html(`
+                <output class="todo-item-text input-output-style"></output>
+                <div class="buttons-group">
+                    <button title="Удалить" class="delete-button" type="button"></button>
+                    <button title="Изменить" class="edit-button" type="button"></button>
+                </div>
+            `);
 
             newTodo.find(".todo-item-text").text(newTodoText);
 
@@ -32,14 +32,14 @@ $(function () {
             });
 
             newTodo.find(".edit-button").click(function () {
-                newTodo.html(
-                    '<input type="text" id="edit-text-field" class="edit-text-field">' +
-                    '<div class="buttons-group">' +
-                    '<button title="Отменить" class="cancel-button" type="button"></button>' +
-                    '<button title="Сохранить изменения" class="save-button" type="button"></button>' +
-                    '</div>' +
-                    '<div class="error-message-for-todo-input">Необходимо указать текст</div>'
-                );
+                newTodo.html(`
+                    <input type="text" id="edit-text-field" class="edit-text-field input-output-style">
+                    <div class="buttons-group">
+                        <button title="Отменить" class="cancel-button" type="button"></button>
+                        <button title="Сохранить изменения" class="save-button" type="button"></button>
+                    </div>
+                    <div class="error-message">Необходимо указать текст</div>
+                `);
 
                 const editTextField = newTodo.find(".edit-text-field");
                 editTextField.val(newTodoText);
@@ -48,15 +48,15 @@ $(function () {
                     setViewMode();
                 });
 
-                newTodo.find(".edit-text-field").keypress(function (enter) {
-                    if (enter.keyCode === 13) {
-                        enter.preventDefault();
+                newTodo.find(".edit-text-field").keypress(function (event) {
+                    if (event.keyCode === 13) {
+                        event.preventDefault();
                         newTodo.find(".save-button").click();
                     }
                 });
 
                 newTodo.find(".save-button").click(function () {
-                    if (!isInputValid(editTextField)) {
+                    if (!validateInput(editTextField)) {
                         return;
                     }
 
@@ -73,7 +73,7 @@ $(function () {
         newTodoTextField.val("");
     });
 
-    function isInputValid(input) {
+    function validateInput(input) {
         input.removeClass("invalid");
 
         if (input.val().trim().length === 0) {
