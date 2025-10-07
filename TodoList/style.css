@@ -13,6 +13,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    padding: 0 15px;
 }
 
 .add-todo-page .add-todo-form > * {
@@ -20,7 +21,7 @@ body {
     display: inline-block;
 }
 
-.add-todo-page .error-message, .add-todo-page .error-message-for-todo-input {
+.add-todo-page .error-message {
     color: #f00;
     display: none;
     padding-top: 5px;
@@ -28,7 +29,7 @@ body {
     font-size: 14px;
 }
 
-.invalid ~ .error-message, .invalid ~ .error-message-for-todo-input {
+.invalid ~ .error-message {
     display: block;
 }
 
@@ -36,7 +37,7 @@ body {
     border-color: #f00;
 }
 
-.todo-item-text, .edit-text-field, .new-todo-text-field {
+.input-output-style {
     width: 500px;
     display: inline-block;
     font-size: 18px;

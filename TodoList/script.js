@@ -18,12 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
         newTodo.classList.add("todo-item");
 
         function setViewMode() {
-            newTodo.innerHTML =
-                '<output class="todo-item-text"></output>' +
-                '<div class="buttons-group">' +
-                '<button title="Удалить" class="delete-button" type="button"></button>' +
-                '<button title="Изменить" class="edit-button" type="button"></button>' +
-                '</div>';
+            newTodo.innerHTML = `
+                <output class="todo-item-text input-output-style"></output>
+                <div class="buttons-group">
+                    <button title="Удалить" class="delete-button" type="button"></button>
+                    <button title="Изменить" class="edit-button" type="button"></button>
+                </div>
+            `;
 
             newTodo.querySelector(".todo-item-text").textContent = newTodoText;
 
@@ -32,13 +33,14 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             newTodo.querySelector(".edit-button").addEventListener("click", function () {
-                newTodo.innerHTML =
-                    '<input type="text" id="edit-text-field" class="edit-text-field">' +
-                    '<div class="buttons-group">' +
-                    '<button title="Отменить" class="cancel-button" type="button"></button>' +
-                    '<button title="Сохранить изменения" class="save-button" type="button"></button>' +
-                    '</div>' +
-                    '<div class="error-message-for-todo-input">Необходимо указать текст</div>';
+                newTodo.innerHTML = `
+                    <input type="text" id="edit-text-field" class="edit-text-field input-output-style">
+                    <div class="buttons-group">
+                        <button title="Отменить" class="cancel-button" type="button"></button>
+                        <button title="Сохранить изменения" class="save-button" type="button"></button>
+                    </div>
+                    <div class="error-message">Необходимо указать текст</div>
+                `;
 
                 const editTextField = newTodo.querySelector(".edit-text-field");
 
@@ -48,9 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     setViewMode();
                 });
 
-                newTodo.querySelector(".edit-text-field").addEventListener("keypress", function (enter) {
-                    if (enter.keyCode === 13) {
-                        enter.preventDefault();
+                newTodo.querySelector(".edit-text-field").addEventListener("keypress", function (event) {
+                    if (event.keyCode === 13) {
+                        event.preventDefault();
 
                         newTodo.querySelector(".save-button").dispatchEvent(new Event("click", {
                             cancelable: true
