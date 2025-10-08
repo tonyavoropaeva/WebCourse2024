@@ -3,7 +3,7 @@
 }
 
 body {
-    background: url("images/base1.jpg");
+    background: url("../images/base1.jpg");
     background-size: cover;
 }
 
@@ -18,7 +18,7 @@ body {
 
 .title {
     font-size: 28px;
-    margin: 0 0 20px 0;
+    margin: 0 0 20px;
 }
 
 .contact-form {
@@ -38,15 +38,15 @@ body {
 
 .contact-form:focus-within {
     border-color: #e600e6;
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
-    0 0 30px rgba(255, 0, 255, 0.5);
+    box-shadow: 0 0 15px #ff00ffcc,
+    0 0 30px #ff00ff7f;
 }
 
 .input-contact {
     padding: 8px 10px;
     border: 1px solid #230b3a;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.34);
+    background-color: #ffffff56;
 }
 
 .form-group {
@@ -56,14 +56,14 @@ body {
 }
 
 .error-message {
-    color: rgb(150, 17, 77);
+    color: #96114d;
     display: none;
     margin-top: 2px;
     font-size: 13px;
 }
 
 .invalid {
-    border-color: #230b3a;
+    border: 3px solid #230b3a;
 }
 
 .invalid + .error-message {
@@ -90,7 +90,7 @@ body {
     text-align: left;
     border: none;
     padding: 5px 10px;
-    background: rgba(150, 17, 77, 0.58);
+    background: #96114d93;
     font-size: 18px;
 }
 
@@ -123,7 +123,7 @@ body {
 }
 
 .contacts-book-table tbody tr:nth-child(even) {
-    background: rgba(194, 130, 238, 0.62);
+    background: #c282ee9e;
 }
 
 .contacts-book-table tbody tr td:first-child {
@@ -140,13 +140,13 @@ body {
     border-radius: 8px;
     margin-top: 20px;
     cursor: pointer;
-    background: rgba(137, 59, 190, 0.35);
+    background: #893bbe59;
     transition: 0.3s ease;
 }
 
 .add-button:hover {
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.6),
-    0 0 30px rgba(255, 0, 255, 0.5);
+    box-shadow: 0 0 15px #ff00ff99,
+    0 0 30px #ff00ff7f;
 }
 
 .contacts-book-table button {
@@ -158,16 +158,21 @@ body {
     background-position: center;
     transition: box-shadow 0.3s;
     margin-left: 10px;
-    background-color: rgba(150, 17, 77, 0.38);
+    background-color: #96114d60;
     cursor: pointer;
 }
 
 .contacts-book-table input {
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid #a069c4;
     border-radius: 5px;
     padding: 5px 0;
+}
+
+.contacts-book-table input:focus-within {
+    border-color: #a069c4;
+    box-shadow: 0 0 15px #6e3693ff,
+    0 0 30px #4a1b69e8;
 }
 
 .contacts-book-table button:hover {
@@ -175,17 +180,17 @@ body {
 }
 
 .edit-button {
-    background-image: url("images/edit.png");
+    background-image: url("../images/edit.png");
 }
 
 .delete-button {
-    background-image: url("images/delete.png");
+    background-image: url("../images/delete.png");
 }
 
 .save-button {
-    background-image: url("images/save.png");
+    background-image: url("../images/save.png");
 }
 
 .cancel-button {
-    background-image: url("images/cancel.png");
+    background-image: url("../images/cancel.png");
 }
